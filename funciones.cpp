@@ -4,6 +4,27 @@
 #include "funciones.h"
 #include <iomanip>
 
+
+
+void menu_del_juego(tipo arr[][9]){
+    int a;
+    cout << "MENU - Juego Senku" << "\n" << "*******************" << endl;
+    cout << "1.ingles" << endl << "2.aleman" << endl << "3.asimetrico" << endl;
+    cout << "*******************" << endl;
+    cout << "0.Salir del juego" << endl;
+    cout << "-Si quiere salir durante el juego, ingresar una letra en fila o columna, o ingresar 0 en las cuatro posiciones." << endl;
+    do {
+        cout << " Elegir modo:";
+        cin >> a;
+        if(!a)
+            break;
+    }while (a < 0 || a > 4);
+    if(a) {
+        tableros(arr, a);
+        imprimir(arr);
+    }
+}
+
 void imprimir(tipo arr2[][9]){
     cout << endl;
     for (int j = 0; j < 9; j++)
@@ -36,25 +57,6 @@ void imprimir(tipo arr2[][9]){
                 cout << setw(4) << " ";
         }
         cout << endl;
-    }
-}
-
-void menu_del_juego(tipo arr[][9]){
-    int a;
-    cout << "MENU - Juego Senku" << "\n" << "*******************" << endl;
-    cout << "1.ingles" << endl << "2.aleman" << endl << "3.asimetrico" << endl;
-    cout << "*******************" << endl;
-    cout << "0.Salir del juego" << endl;
-    cout << "-Si quiere salir durante el juego, ingresar una letra en fila o columna, o ingresar 0 en las cuatro posiciones." << endl;
-    do {
-        cout << " Elegir modo:";
-        cin >> a;
-        if(!a)
-            break;
-    }while (a < 0 || a > 4);
-    if(a) {
-        tableros(arr, a);
-        imprimir(arr);
     }
 }
 
